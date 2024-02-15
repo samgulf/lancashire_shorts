@@ -4,12 +4,12 @@ body, html {
     font-family: Arial, sans-serif;
     background-color: #e3e2dd;
     color: #012034;
+    font-size: 24px 
 }
 
 header, footer {
     text-align: center;
     padding: 20px;
-    font-size: 16px
 }
 
 main {

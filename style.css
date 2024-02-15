@@ -23,13 +23,19 @@ main {
     text-align: center;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 audio {
     width: 100%;
-    max-width: 600px; /* Adjust based on your design preference */
+    max-width: 600px;
 }
 
 @media (max-width: 768px) {
-    audio {
+    .audio-play img {
         width: 90%;
+        margin: 0 auto;
     }
 }

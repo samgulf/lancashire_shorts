@@ -49,6 +49,24 @@
 
 </main>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var audioElements = document.querySelectorAll('audio');
+    
+        audioElements.forEach(function(audio) {
+            audio.addEventListener('play', function() {
+                // Extract the event name from the class attribute, replacing "+" with spaces.
+                // Adjust this logic if you decide to use a different method for naming.
+                var eventName = this.getAttribute('class').replace('plausible-event-name=', '').replace(/\+/g, ' ');
+                // Send a unique event for each audio play. The event name includes the audio title.
+                plausible(eventName);
+            }, false);
+        });
+    });
+</script>
+    
+</body>
+
 <footer>
     <p>© Phil Taylor, 2024. All rights reserved.</p>
 </footer>

@@ -65,14 +65,3 @@ audio {
     z-index: 1000; /* Ensures the banner stays on top */
     box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: adds shadow for better visibility */
 }
-
-.announcement-banner button {
-    position: absolute;
-    right: 20px;
-    top: 10px;
-    border: none;
-    background-color: transparent;
-    color: inherit;
-    font-size: 20px;
-    cursor: pointer;
-}

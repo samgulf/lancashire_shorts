@@ -4,7 +4,8 @@ body, html {
     font-family: Arial, sans-serif;
     background-color: #e3e2dd;
     color: #012034;
-    font-size: 24px 
+    font-size: 24px ;
+    padding-top: 50px; /* Adjust this value based on the height of your banner */
 }
 
 header, footer {
@@ -50,3 +51,28 @@ audio {
     }
 }
 
+.announcement-banner {
+    background-color: #f8d7da; /* Light red background */
+    color: #721c24; /* Dark red text */
+    text-align: center;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensures the banner stays on top */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: adds shadow for better visibility */
+}
+
+.announcement-banner button {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    border: none;
+    background-color: transparent;
+    color: inherit;
+    font-size: 20px;
+    cursor: pointer;
+}

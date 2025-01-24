@@ -11,18 +11,13 @@ document.addEventListener('DOMContentLoaded', () => {
             modalImage.src = img.getAttribute('data-full');
             captionText.innerText = img.alt;
             audioPlayer.src = img.getAttribute('data-audio');
-            // const audioFile = img.getAttribute('data-audio').split('/').pop();           ;
-            // const audioFileName = audioFile.split('.').slice(0, -1).join('.').replace(/\s+/g, '_'); // Remove the extension
-            // if (window.plausible) {
-            //     plausible(audioFileName); // Send event to Plausible
-            // }
             audioPlayer.play();
         });
     });
 
     audioPlayer.addEventListener('play', () => {
         const audioFile = audioPlayer.src.split('/').pop(); // Get the file name with extension
-        const audioFileName = audioFile.split('.').slice(0, -1).join('.').replace(/\+/g, ' '); // Remove the extension
+        const audioFileName = audioFile.split('.').slice(0, -1).join('.').replace(/\s/g, '+'); // Remove the extension
         if (window.plausible) {
             plausible(audioFileName); // Send event to Plausible
         }

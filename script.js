@@ -16,9 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     audioPlayer.addEventListener('play', () => {
-        const audioFile = audioPlayer.src.split('/').pop(); // Get the file name with extension
-        const audioFileName = audioFile.split('.').slice(0, -1).join('.').replace(/\s/g, '+'); // Remove the extension
+        const audioFileName = decodeURIComponent(audioPlayer.src.split('/').pop()).split('.').slice(0, -1).join('.');
         if (window.plausible) {
+            console.log('Plausible event sent:', audioFileName);
             plausible(audioFileName); // Send event to Plausible
         }
     });

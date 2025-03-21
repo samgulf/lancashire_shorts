@@ -15,11 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     showcaseAudio.addEventListener('play', () => {
-        const audioFileName = decodeURIComponent(audioPlayer.src.split('/').pop()).split('.').slice(0, -1).join('.');
+        const audioFileName = decodeURIComponent(showcaseAudio.src.split('/').pop()).split('.').slice(0, -1).join('.');
         if (window.plausible) {
             console.log('Plausible event sent:', audioFileName);
             plausible(audioFileName); // Send event to Plausible
         }
     });
-
 });

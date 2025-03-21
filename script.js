@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const showcaseImage = document.getElementById('showcase-image');
     const showcaseAudio = document.getElementById('showcase-audio');
+    const showcaseAudioSource = showcaseAudio.querySelector('source');
 
     document.querySelectorAll('.grid-item img').forEach(img => {
         img.addEventListener('click', function () {
@@ -9,16 +10,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
             showcaseImage.src = fullImage;
             showcaseImage.alt = img.alt;
-            showcaseAudio.src = audioSrc;
+
+            // Update both <audio> and <source>
+            showcaseAudioSource.src = audioSrc;
+            showcaseAudio.load();
             showcaseAudio.play();
         });
     });
 
     showcaseAudio.addEventListener('play', () => {
-        const audioFileName = decodeURIComponent(showcaseAudio.src.split('/').pop()).split('.').slice(0, -1).join('.');
+        const src = showcaseAudioSource.src || showcaseAudio.currentSrc;
+        const audioFileName = decodeURIComponent(src.split('/').pop()).split('.').slice(0, -1).join('.');
         if (window.plausible) {
             console.log('Plausible event sent:', audioFileName);
-            plausible(audioFileName); // Send event to Plausible
+            plausible(audioFileName);
         }
     });
 });

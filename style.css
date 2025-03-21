@@ -63,6 +63,28 @@ body {
     font-family: Arial, sans-serif;
 }
 
+.showcase-player {
+    text-align: center;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.showcase-player img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.showcase-player audio {
+    width: 100%;
+    max-width: 100%;
+}
+
 .grid-container {
     display: grid;
     gap: 10px;

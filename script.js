@@ -1,15 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
     const showcaseImage = document.getElementById('showcase-image');
     const showcaseAudio = document.getElementById('showcase-audio');
+    const showcaseLogline = document.getElementById('showcase-logline');
     const showcaseAudioSource = showcaseAudio.querySelector('source');
 
     document.querySelectorAll('.grid-item img').forEach(img => {
         img.addEventListener('click', function () {
             const fullImage = img.getAttribute('data-full');
             const audioSrc = img.getAttribute('data-audio');
+            const logline = img.getAttribute('data-logline') || '';
 
             showcaseImage.src = fullImage;
             showcaseImage.alt = img.alt;
+            showcaseLogline.textContent = logline;
 
             // Update both <audio> and <source>
             showcaseAudioSource.src = audioSrc;

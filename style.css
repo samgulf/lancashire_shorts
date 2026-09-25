@@ -80,6 +80,13 @@ body {
     margin-bottom: 15px;
 }
 
+
+.showcase-logline {
+    margin: 0 0 18px;
+    font-size: 0.9em;
+    line-height: 1.45;
+}
+
 .showcase-player audio {
     width: 100%;
     max-width: 100%;
